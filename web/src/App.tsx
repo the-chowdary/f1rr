@@ -1,8 +1,12 @@
+import { RouterProvider } from '@tanstack/react-router';
+import { Router } from '@app/routes';
+
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof Router;
+  }
+}
+
 export function App() {
-  return (
-    <div className="text-center">
-      <h1 className="text-3xl">F1brr</h1>
-      <span>A place for f1 to go rrrrr....</span>
-    </div>
-  );
+  return <RouterProvider router={Router} />;
 }
